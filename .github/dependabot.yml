@@ -1,15 +1,16 @@
-# reference:
-# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
+---
 version: 2
 updates:
-  - package-ecosystem: "gomod"
-    directory: "/"
+  - package-ecosystem: gomod
+    directory: /
+    cooldown:
+      default-days: 7
     schedule:
-      interval: "weekly"
-      day: "sunday"
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
+      day: sunday
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: /
+    cooldown:
+      default-days: 7
     schedule:
-      interval: "daily"
+      interval: daily
